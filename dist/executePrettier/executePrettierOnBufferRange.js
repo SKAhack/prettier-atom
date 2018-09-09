@@ -45,7 +45,8 @@ const executePrettierWithCursor = (editor, text, cursorOffset
 const buildPrettierEslintOptions = (editor, text) => (0, _extends3.default)({
   text
 }, getPrettierEslintOptions(), {
-  filePath: getCurrentFilePath(editor)
+  eslintConfig: require('../../eslintrc.js'),
+  prettierOptions: require('../../prettierrc.js')
 });
 
 const executePrettierEslint = (editor, text) => allowUnsafeNewFunction(() => prettierEslint(buildPrettierEslintOptions(editor, text)));

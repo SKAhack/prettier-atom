@@ -40,7 +40,8 @@ const executePrettierWithCursor = (
 const buildPrettierEslintOptions = (editor: TextEditor, text: string) => ({
   text,
   ...getPrettierEslintOptions(),
-  filePath: getCurrentFilePath(editor),
+  eslintConfig: require('../../eslintrc.js'),
+  prettierOptions: require('../../prettierrc.js'),
 });
 
 const executePrettierEslint = (editor: TextEditor, text: string): string =>
